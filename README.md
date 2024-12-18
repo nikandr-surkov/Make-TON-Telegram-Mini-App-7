@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Make TON Telegram Mini App 7: Customize Telegram Mini App Theme
+Welcome to the seventh guide in the **Make TON Telegram Mini App** series! This project demonstrates how to create a Telegram Mini App that showcases theme customization capabilities using Next.js 14, TypeScript, and Tailwind CSS.
+
+## Project Overview
+This Telegram Mini App demonstrates:
+- Setting up a Next.js 14 project with TypeScript and Tailwind CSS
+- Customizing Telegram Mini App appearance using Web App API
+- Real-time color customization for header, bottom bar, and background
+- TypeScript type definitions for Telegram Web App API
+- Basic error handling for non-Telegram environments
+
+## Prerequisites
+- Node.js (version 14 or higher)
+- npm (comes with Node.js)
+- A Telegram account
+- A Telegram Bot Token
+- GitHub account
+- Vercel account (for deployment)
 
 ## Getting Started
+1. Clone the repository:
+   ```
+   git clone https://github.com/nikandr-surkov/Make-TON-Telegram-Mini-App-7.git
+   cd Make-TON-Telegram-Mini-App-7
+   ```
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Project Structure
+```
+Make-TON-Telegram-Mini-App-7/
+├── app/
+│   ├── layout.tsx      # Root layout with Telegram Web App script
+│   ├── page.tsx        # Main page with theme customization
+│   └── globals.css     # Global styles and Tailwind
+├── types/
+│   └── telegram.d.ts   # TypeScript definitions for Telegram Web App
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
+- Interactive color pickers for customizing:
+  - Header color
+  - Bottom bar color
+  - Background color
+- Real-time preview of color changes
+- TypeScript support for Telegram Web App API
+- Responsive design with Tailwind CSS
+- Environment detection (Telegram vs non-Telegram)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment and Usage
+Since this is a Telegram Mini App, you need to deploy it before testing:
+1. Push your code to a GitHub repository
+2. Deploy to Vercel:
+   - Sign up for a Vercel account if needed
+   - Connect your GitHub repository
+   - Deploy the project
+3. Set up your Telegram Mini App:
+   - Go to [@BotFather](https://t.me/BotFather) on Telegram
+   - Send `/newapp` or edit an existing bot
+   - Use the Vercel URL as your Web App URL
+4. Access your Mini App through Telegram on mobile or web
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Customization Parameters
+The app demonstrates the following Telegram Mini App customization methods:
+```typescript
+WebApp.headerColor = "#000000";      // Customize header color
+WebApp.bottomBarColor = "#1d2025";   // Customize bottom bar color
+WebApp.expand();                     // Take full height
+WebApp.enableVerticalSwipes();       // Enable swipe to close
+```
 
-## Learn More
+## YouTube Channel
+For video tutorials and more detailed explanations, visit my YouTube channel:
+[Nikandr Surkov](https://www.youtube.com/@NikandrSurkov)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Next Steps
+Stay tuned for the next guide in the **Make TON Telegram Mini App** series, where we'll explore more advanced features and integrations with the Telegram platform!
