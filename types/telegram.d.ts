@@ -5,6 +5,7 @@ declare global {
                 ready(): void;
                 expand(): void;
                 enableVerticalSwipes(): void;
+                initData: string;
                 MainButton: {
                     show(): void;
                     hide(): void;

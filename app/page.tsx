@@ -12,18 +12,29 @@ export default function Home() {
 
   useEffect(() => {
     if (window.Telegram?.WebApp) {
-      const tg = window.Telegram.WebApp;
-      tg.ready();
-      tg.expand();
-      tg.enableVerticalSwipes();
+      const initDataString = window.Telegram.WebApp.initData;
+      if (initDataString) {
+        const urlParams = new URLSearchParams(initDataString);
+        try {
+          const user = JSON.parse(urlParams.get('user') || '{}');
+          if (user.id) {
+            const tg = window.Telegram.WebApp;
+            tg.ready();
+            tg.expand();
+            tg.enableVerticalSwipes();
 
-      // Set initial colors
-      tg.headerColor = "#000000";
-      tg.bottomBarColor = "#1d2025";
+            // Set initial colors
+            tg.headerColor = "#000000";
+            tg.bottomBarColor = "#1d2025";
 
-      setIsTelegram(true);
+            setIsTelegram(true);
+          }
+        } catch (error) {
+          console.error('Error parsing user data:', error);
+        }
+      }
     }
-  }, []);
+  }, [])
 
   const updateTheme = (property: string, value: string) => {
     if (window.Telegram?.WebApp) {
